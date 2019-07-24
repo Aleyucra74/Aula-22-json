@@ -1,6 +1,1 @@
-[
-    {"nome" : "sergio","email" :"sergio@sergio.com"},
-    {"nome" : "alexandre","email" :"ale@ale.com"},
-    {"nome" : "ana livia","email" :"ana@livia.com"}
-
-]
+[{"nome":"sergio","email":"sergio@sergio.com"},{"nome":"alexandre","email":"ale@ale.com"},{"nome":"ana livia","email":"ana@livia.com"},{"nome":"dari","email":"dari@dari.com"}]

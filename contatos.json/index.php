@@ -9,6 +9,36 @@
         return $contatos;
     }
 
+    //function q add contato json
+    function addContatos($nome,$email){
+        //carregando os contatos
+        $contatos = getContatos();
+
+        //add um novo contato ao array de contatos
+        $contatos[] = [
+            'nome' => $nome,
+            'email' => $email
+        ];
+
+        //transformar o array contatos nume string json
+        $json = json_encode($contatos);
+
+        //salvar a string json no arquivo
+        file_put_contents(ARQUIVO,$json);
+    }
+
+    if (!$_POST == '') {
+        # code...
+        echo "preencha os campos";
+    } else {
+
+        if($_POST){
+            //add o contato ao arquivo json
+            addContatos($_POST['nome'],$_POST['email']);
+
+        }
+
+    }
     $contatos = getContatos();
 
 ?>
@@ -34,7 +64,7 @@
     </ul>
 
 
-    <form action="index.php">
+    <form action="index.php" method="POST">
         <input type="text" name="nome" id="nome" placeholder="digite o nome">
         <input type="email" name="email" id="email" placeholder="digite o email">
         <button type="submit">Salvar</button>
